@@ -22,8 +22,8 @@ const CarbonForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-6 bg-dark-surface/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50">
-      <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300 mb-8 text-center">
+    <div className="w-full max-w-2xl mx-auto p-6 bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50">
+      <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-emerald-300 mb-8 text-center">
         Log Your Daily Footprint
       </h2>
       
@@ -31,7 +31,7 @@ const CarbonForm = ({ onSubmit }) => {
         
         {/* Transport Section */}
         <div className="space-y-4">
-          <div className="flex items-center space-x-3 text-primary-dark">
+          <div className="flex items-center space-x-3 text-emerald-600">
             <Car className="w-6 h-6" />
             <h3 className="text-xl font-semibold text-gray-200">Transport</h3>
           </div>
@@ -45,7 +45,7 @@ const CarbonForm = ({ onSubmit }) => {
                 onChange={handleChange}
                 placeholder="e.g. 15"
                 min="0"
-                className="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-white placeholder-gray-500"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all outline-none text-white placeholder-gray-500"
               />
             </div>
             <div>
@@ -54,7 +54,7 @@ const CarbonForm = ({ onSubmit }) => {
                 name="vehicleType"
                 value={formData.vehicleType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-white appearance-none"
+                className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all outline-none text-white appearance-none"
               >
                 <option value="Car">Car</option>
                 <option value="Motorcycle">Motorcycle</option>
@@ -81,7 +81,7 @@ const CarbonForm = ({ onSubmit }) => {
               placeholder="e.g. 5.5"
               min="0"
               step="0.1"
-              className="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none text-white placeholder-gray-500"
+              className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none text-white placeholder-gray-500"
             />
           </div>
         </div>
@@ -98,7 +98,7 @@ const CarbonForm = ({ onSubmit }) => {
               name="dietType"
               value={formData.dietType}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-dark/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none text-white appearance-none"
+              className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none text-white appearance-none"
             >
               <option value="Vegan">Vegan</option>
               <option value="Vegetarian">Vegetarian</option>
@@ -110,7 +110,7 @@ const CarbonForm = ({ onSubmit }) => {
 
         <button
           type="submit"
-          className="w-full py-4 mt-8 bg-gradient-to-r from-primary to-emerald-400 hover:from-primary-dark hover:to-primary text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/30 flex items-center justify-center space-x-2 transition-transform transform hover:-translate-y-1"
+          className="w-full py-4 mt-8 bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-emerald-500/30 flex items-center justify-center space-x-2 transition-transform transform hover:-translate-y-1"
         >
           <span>Calculate Footprint</span>
           <Send className="w-5 h-5" />

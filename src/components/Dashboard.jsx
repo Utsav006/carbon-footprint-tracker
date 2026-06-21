@@ -43,7 +43,7 @@ const Dashboard = ({ data, onBack }) => {
   ];
 
   const getStatus = (total) => {
-    if (total <= 6) return { text: 'Excellent! You are well below average.', icon: <CheckCircle2 className="w-8 h-8 text-primary" />, color: 'text-primary' };
+    if (total <= 6) return { text: 'Excellent! You are well below average.', icon: <CheckCircle2 className="w-8 h-8 text-emerald-500" />, color: 'text-emerald-500' };
     if (total <= 13) return { text: 'Good job! You are around the global average.', icon: <Leaf className="w-8 h-8 text-yellow-400" />, color: 'text-yellow-400' };
     return { text: 'High footprint. Consider ways to reduce your impact.', icon: <AlertTriangle className="w-8 h-8 text-red-500" />, color: 'text-red-500' };
   };
@@ -53,9 +53,9 @@ const Dashboard = ({ data, onBack }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-dark-surface p-3 rounded-lg shadow-xl border border-gray-700">
+        <div className="bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-700">
           <p className="text-gray-200 font-semibold">{`${payload[0].name}`}</p>
-          <p className="text-primary">{`${payload[0].value.toFixed(2)} kg CO₂`}</p>
+          <p className="text-emerald-500">{`${payload[0].value.toFixed(2)} kg CO₂`}</p>
         </div>
       );
     }
@@ -63,7 +63,7 @@ const Dashboard = ({ data, onBack }) => {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-6 bg-dark-surface/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 animate-fade-in">
+    <div className="w-full max-w-5xl mx-auto p-6 bg-gray-800/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 animate-fade-in">
       <div className="flex items-center justify-between mb-8 border-b border-gray-700/50 pb-6">
         <button 
           onClick={onBack}
@@ -72,7 +72,7 @@ const Dashboard = ({ data, onBack }) => {
           <ArrowLeft className="w-5 h-5" />
           <span>Back to Form</span>
         </button>
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">
+        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-emerald-300">
           Your Daily Footprint
         </h2>
         <div className="w-24"></div> {/* Spacer for centering */}
@@ -80,13 +80,13 @@ const Dashboard = ({ data, onBack }) => {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <div className="bg-dark/50 rounded-xl p-6 border border-gray-700 flex flex-col items-center justify-center text-center">
+        <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700 flex flex-col items-center justify-center text-center">
           <p className="text-gray-400 text-sm uppercase tracking-wider mb-2">Total CO₂</p>
           <p className="text-5xl font-black text-white mb-2">{totalFootprint.toFixed(1)} <span className="text-xl text-gray-500 font-normal">kg</span></p>
         </div>
         
-        <div className={`col-span-1 md:col-span-2 bg-dark/50 rounded-xl p-6 border border-gray-700 flex items-center space-x-6`}>
-          <div className="p-4 bg-dark rounded-full shadow-inner">
+        <div className={`col-span-1 md:col-span-2 bg-gray-900/50 rounded-xl p-6 border border-gray-700 flex items-center space-x-6`}>
+          <div className="p-4 bg-gray-900 rounded-full shadow-inner">
             {status.icon}
           </div>
           <div>
@@ -100,7 +100,7 @@ const Dashboard = ({ data, onBack }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Breakdown Chart */}
-        <div className="bg-dark/40 rounded-xl p-6 border border-gray-700/50 flex flex-col h-80">
+        <div className="bg-gray-900/40 rounded-xl p-6 border border-gray-700/50 flex flex-col h-80">
           <h3 className="text-lg font-semibold text-gray-200 mb-4 text-center">Footprint Breakdown</h3>
           <div className="flex-1 w-full">
             <ResponsiveContainer width="100%" height="100%">
@@ -134,7 +134,7 @@ const Dashboard = ({ data, onBack }) => {
         </div>
 
         {/* Comparison Chart */}
-        <div className="bg-dark/40 rounded-xl p-6 border border-gray-700/50 flex flex-col h-80">
+        <div className="bg-gray-900/40 rounded-xl p-6 border border-gray-700/50 flex flex-col h-80">
           <h3 className="text-lg font-semibold text-gray-200 mb-4 text-center">Comparison</h3>
           <div className="flex-1 w-full">
             <ResponsiveContainer width="100%" height="100%">

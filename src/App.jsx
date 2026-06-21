@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from './firebase';
 import CarbonForm from './components/CarbonForm';
 import Dashboard from './components/Dashboard';
 
 function App() {
   const [footprintData, setFootprintData] = useState(null);
 
-  const handleFormSubmit = (data) => {
-    setFootprintData(data);
+  const handleFormSubmit = async (data) => {
+    try {
+      // Save data to Firestore
+      const docRef = await addDoc(collection(db, "footprintLogs"), {
+        ...data,
+        timestamp: serverTimestamp()
+      });
+      console.log("Document written with ID: ", docRef.id);
+      
+      // Update local state to show Dashboard
+      setFootprintData(data);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      alert("Failed to save data to Firebase. Please check your console/configuration.");
+      // Still show dashboard locally even if firebase fails? Or maybe not.
+      setFootprintData(data);
+    }
   };
 
   const handleBack = () => {
